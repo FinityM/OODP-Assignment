@@ -6,6 +6,7 @@
  * Add a button decorator
  */
 
+import structural.ButtonDecorator;
 import structural.WinAdapter;
 
 import java.awt.event.*;
@@ -17,6 +18,8 @@ public class LegacyCalculator extends JFrame implements ActionListener {
 
     // create a textfield
     static JTextField l;
+
+    static ButtonDecorator buttonDecorator;
 
     // store operator and operands
     String s0, s1, s2;
@@ -76,7 +79,8 @@ public class LegacyCalculator extends JFrame implements ActionListener {
         bs = new JButton("-");
         bd = new JButton("/");
         bm = new JButton("*");
-        beq = new JButton("C");
+//        beq = new JButton("C");
+        buttonDecorator = new ButtonDecorator(beq = new JButton("C"));
 
         // create . button
         be = new JButton(".");
