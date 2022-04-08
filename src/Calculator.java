@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends javax.swing.JFrame {
 
+    private final double total2 = 0.0;
     public JPanel JCalc;
     public JTextField textDisplay;
     private double total1 = 0.0;
-    private final double total2 = 0.0;
     private char math_operator;
     private JButton btnDivide;
     private JButton btnOne;
@@ -34,16 +34,14 @@ public class Calculator extends javax.swing.JFrame {
     public Calculator() {
         JFrame frm = this;
 
-
+        btnOne.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                executeCommand(new InputButtonCommand(frm, btnOne, textDisplay));
+            }
+        });
 
 //        btnOne.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                executeCommand(new InputButtonCommand(frm, btnOne, textDisplay));
-//            }
-//        });
-//
-//                btnOne.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
 //                String btnOneText = textDisplay.getText() + btnOne.getText();
@@ -51,6 +49,7 @@ public class Calculator extends javax.swing.JFrame {
 //
 //            }
 //        });
+
 //        btnTwo.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
