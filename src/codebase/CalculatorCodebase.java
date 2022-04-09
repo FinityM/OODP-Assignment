@@ -1,17 +1,18 @@
-/**
+package codebase; /**
  * Codebase source:
  * https://www.homeandlearn.co.uk/java/java.html
  * Section 10: Java Calculator Project
  */
 
 import creational.*;
+import calculator.Calculator;
 import structural.WinAdapter;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculator extends javax.swing.JFrame {
+public class CalculatorCodebase extends javax.swing.JFrame {
 
     public JPanel JCalc;
     public JTextField textDisplay;
@@ -36,7 +37,7 @@ public class Calculator extends javax.swing.JFrame {
     public JButton btnMultiply;
     public JButton btnEquals;
 
-    public Calculator() {
+    public CalculatorCodebase() {
 
         btnOne.addActionListener(new ActionListener() {
             @Override
