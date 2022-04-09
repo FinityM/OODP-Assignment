@@ -2,6 +2,10 @@ package calculator;
 
 import javax.swing.*;
 
+/**
+ * Math Operator class to handle the operators and give them easier access
+ */
+
 public class MathOperators {
     public double total1 = 0.0;
     public double total2 = 0.0;
