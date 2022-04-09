@@ -1,4 +1,4 @@
-// Java program to create a simple calculator
+package codebase;// Java program to create a simple calculator
 // with basic +, -, /, * using java swing elements
 
 /**
