@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculator extends javax.swing.JFrame {
+public class CalculatorTest extends javax.swing.JFrame {
 
     public JPanel JCalc;
     public JTextField textDisplay;
@@ -31,7 +31,7 @@ public class Calculator extends javax.swing.JFrame {
     public JButton btnMultiply;
     public JButton btnEquals;
 
-    public Calculator() {
+    public CalculatorTest() {
 
         btnOne.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -162,7 +162,7 @@ public class Calculator extends javax.swing.JFrame {
 
         WinAdapter wapp = new WinAdapter();
         JFrame frame = new JFrame("Calculator");
-        frame.setContentPane(new Calculator().JCalc);
+        frame.setContentPane(new CalculatorTest().JCalc);
         frame.pack();
         frame.setVisible(true);
         frame.addWindowListener(wapp);
