@@ -3,8 +3,8 @@ package behavioural;
 import javax.swing.*;
 
 public class InputButtonPointCommand implements Command {
-    private JButton button;
-    private JTextField textField;
+    private final JButton button;
+    private final JTextField textField;
 
     public InputButtonPointCommand(JButton button, JTextField textField) {
         this.button = button;

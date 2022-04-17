@@ -2,7 +2,7 @@ package creational;
 
 /**
  * The concrete factory for Unix
- * */
+ */
 public class UnixWindowsWidgetFactory extends AbstractWidgetFactory {
 
     @Override

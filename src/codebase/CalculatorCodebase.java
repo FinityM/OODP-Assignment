@@ -4,7 +4,6 @@ package codebase; /**
  * Section 10: Java Calculator Project
  */
 
-import creational.*;
 import calculator.Calculator;
 import structural.WinAdapter;
 
@@ -210,19 +209,6 @@ public class CalculatorCodebase extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
-        GUIBuilder builder = new GUIBuilder();
-
-        AbstractWidgetFactory widgetFactory = null;
-
-        //check what platform we're on
-        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-            widgetFactory = new MacOSXWidgetFactory();
-        } else if (System.getProperty("os.name").toLowerCase().contains("unix")) {
-            widgetFactory = new UnixWindowsWidgetFactory();
-        } else {
-            widgetFactory = new MsWindowsWidgetFactory();
-        }
-        builder.buildWindow(widgetFactory, "New Window");
 
         WinAdapter wapp = new WinAdapter();
         JFrame frame = new JFrame("Calculator");

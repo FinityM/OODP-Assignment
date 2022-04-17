@@ -5,8 +5,8 @@ import calculator.MathOperators;
 import javax.swing.*;
 
 public class InputButtonClearCommand implements Command {
-    private JTextField textField;
-    private MathOperators mo;
+    private final JTextField textField;
+    private final MathOperators mo;
 
     public InputButtonClearCommand(JTextField textField, MathOperators mo) {
         this.textField = textField;

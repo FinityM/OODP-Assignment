@@ -1,7 +1,17 @@
+/**
+ * Codebase source:
+ * https://www.homeandlearn.co.uk/java/java.html
+ * Section 10: Java Calculator Project
+ * IntelliJ Version guide found here:
+ * https://youtube.com/playlist?list=PLVebSvXY44hFyJMAXmpzp9sTyupgCUaAn
+ */
+
 package calculator;
 
 import behavioural.*;
 import creational.*;
+import structural.HttpsDecorator;
+import structural.Url;
 import structural.WinAdapter;
 import javax.swing.*;
 
@@ -26,7 +36,7 @@ public class Calculator extends javax.swing.JFrame {
     public JButton btnMinus;
     public JButton btnMultiply;
     public JButton btnEquals;
-    private MathOperators mathOperators = new MathOperators();
+    private final MathOperators mathOperators = new MathOperators();
 
     public Calculator() {
 
@@ -87,6 +97,15 @@ public class Calculator extends javax.swing.JFrame {
             widgetFactory = new MsWindowsWidgetFactory();
         }
         builder.buildWindow(widgetFactory, "New Window");
+
+        String url = "homeandlearn.co.uk/java/java.html";
+
+        Url source = new Url(url);
+
+        HttpsDecorator sourcedecorate = new HttpsDecorator(new Url(url));
+
+        System.out.println("Source of this codebase: ");
+        sourcedecorate.show();
 
         WinAdapter wapp = new WinAdapter();
         JFrame frame = new JFrame("Calculator");

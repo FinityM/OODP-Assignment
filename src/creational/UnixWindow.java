@@ -2,9 +2,11 @@ package creational;
 
 /**
  * The concrete product for Unix
- * */
-public class UnixWindow extends Window{
-    UnixWindow(String text){this.title = text;}
+ */
+public class UnixWindow extends Window {
+    UnixWindow(String text) {
+        this.title = text;
+    }
 
     @Override
     public void repaint() {

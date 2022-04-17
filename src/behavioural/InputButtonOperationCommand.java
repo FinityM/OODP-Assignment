@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class InputButtonOperationCommand implements Command {
 
-    private JButton button;
-    private JTextField textField;
-    private MathOperators mo;
+    private final JButton button;
+    private final JTextField textField;
+    private final MathOperators mo;
 
     public InputButtonOperationCommand(JButton button, JTextField textField, MathOperators mo) {
         this.button = button;

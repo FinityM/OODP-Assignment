@@ -1,9 +1,14 @@
 package structural;
 
-import javax.swing.*;
+public class Decorator extends Content {
+    // Object with Content type to reference the content
+    private final Content contentToBeDecorated;
 
-public class Decorator extends JComponent {
-    public Decorator(JComponent c) {
-        add(c);
+    Decorator(Content contentToBeDecorated) {
+        this.contentToBeDecorated = contentToBeDecorated;
+    }
+
+    public void show() {
+        contentToBeDecorated.show();
     }
 }

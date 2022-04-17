@@ -1,17 +1,13 @@
 package codebase;// Java program to create a simple calculator
 // with basic +, -, /, * using java swing elements
 
-/**
- * TODO:
- * Add a button decorator
- */
-
-import structural.ButtonDecorator;
 import structural.WinAdapter;
 
-import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class LegacyCalculator extends JFrame implements ActionListener {
     // create a frame
     static JFrame f;
@@ -19,20 +15,16 @@ public class LegacyCalculator extends JFrame implements ActionListener {
     // create a textfield
     static JTextField l;
 
-    static ButtonDecorator buttonDecorator;
-
     // store operator and operands
     String s0, s1, s2;
 
     // default constructor
-    LegacyCalculator()
-    {
+    LegacyCalculator() {
         s0 = s1 = s2 = "";
     }
 
     // main function
-    public static void main(String args[])
-    {
+    public static void main(String[] args) {
         // Window adapter closer
         WinAdapter winAdapter = new WinAdapter();
 
@@ -42,8 +34,7 @@ public class LegacyCalculator extends JFrame implements ActionListener {
         try {
             // set look and feel
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
@@ -79,8 +70,7 @@ public class LegacyCalculator extends JFrame implements ActionListener {
         bs = new JButton("-");
         bd = new JButton("/");
         bm = new JButton("*");
-//        beq = new JButton("C");
-        buttonDecorator = new ButtonDecorator(beq = new JButton("C"));
+        beq = new JButton("C");
 
         // create . button
         be = new JButton(".");
@@ -139,8 +129,8 @@ public class LegacyCalculator extends JFrame implements ActionListener {
         f.setResizable(false);
         f.setVisible(true);
     }
-    public void actionPerformed(ActionEvent e)
-    {
+
+    public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
 
         // if the value is a number
@@ -153,15 +143,13 @@ public class LegacyCalculator extends JFrame implements ActionListener {
 
             // set the value of text
             l.setText(s0 + s1 + s2);
-        }
-        else if (s.charAt(0) == 'C') {
+        } else if (s.charAt(0) == 'C') {
             // clear the one letter
             s0 = s1 = s2 = "";
 
             // set the value of text
             l.setText(s0 + s1 + s2);
-        }
-        else if (s.charAt(0) == '=') {
+        } else if (s.charAt(0) == '=') {
 
             double te;
 
@@ -182,8 +170,7 @@ public class LegacyCalculator extends JFrame implements ActionListener {
             s0 = Double.toString(te);
 
             s1 = s2 = "";
-        }
-        else {
+        } else {
             // if there was no operand
             if (s1.equals("") || s2.equals(""))
                 s1 = s;
